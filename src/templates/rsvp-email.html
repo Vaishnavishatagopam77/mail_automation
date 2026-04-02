@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{subject}}</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1f2328;
+    }
+    .wrapper {
+      max-width: 600px;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    }
+    /* ── Header banner ── */
+    .header {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      padding: 32px 40px 24px;
+      text-align: center;
+    }
+    .header .logo {
+      font-size: 13px;
+      font-weight: 600;
+      color: #8b949e;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      color: #f0f6fc;
+      line-height: 1.3;
+    }
+    /* ── Body ── */
+    .body {
+      padding: 32px 40px;
+    }
+    .greeting {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 20px;
+    }
+    .intro {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444d56;
+      margin: 0 0 28px;
+    }
+    /* ── Date/time block ── */
+    .datetime-block {
+      background: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .datetime-block .icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .datetime-block .dt-content {
+      font-size: 14px;
+      color: #444d56;
+      line-height: 1.6;
+    }
+    .datetime-block .dt-content strong {
+      display: block;
+      font-size: 15px;
+      color: #1f2328;
+      margin-bottom: 2px;
+    }
+    /* ── RSVP buttons ── */
+    .rsvp-section {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .rsvp-section p {
+      font-size: 15px;
+      color: #444d56;
+      margin: 0 0 16px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 6px 8px;
+    }
+    .btn-yes {
+      background-color: #2da44e;
+      color: #ffffff;
+    }
+    .btn-no {
+      background-color: #f3d0d7;
+      color: #6e3040;
+    }
+    /* ── Event details ── */
+    .details-section {
+      margin-bottom: 28px;
+    }
+    .details-section h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: #1f2328;
+    }
+    .details-section ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .details-section ul li {
+      font-size: 14px;
+      color: #444d56;
+      line-height: 1.7;
+      padding-left: 4px;
+    }
+    /* ── Organizer message ── */
+    .organizer-block {
+      border: 1px solid #d0d7de;
+      border-left: 4px solid #0969da;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      background: #f6f8fa;
+    }
+    .organizer-block p {
+      margin: 0;
+      font-size: 14px;
+      color: #444d56;
+      line-height: 1.6;
+    }
+    .organizer-block .organizer-name {
+      margin-top: 10px;
+      font-weight: 600;
+      color: #1f2328;
+    }
+    /* ── Footer ── */
+    .footer {
+      background: #f6f8fa;
+      border-top: 1px solid #d0d7de;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #0969da;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">GitHub Copilot Dev Days</div>
+      <h1>{{eventTitle}}</h1>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+
+      <!-- Personalised greeting -->
+      <p class="greeting">Hi {{name}} 🙌</p>
+
+      <p class="intro">
+        You're invited to join us for an exclusive developer event. We'd love to
+        know if you can make it — please RSVP using the buttons below.
+      </p>
+
+      <!-- Date / time block -->
+      <div class="datetime-block">
+        <span class="icon">📅</span>
+        <div class="dt-content">
+          <strong>{{eventDate}}</strong>
+          {{eventTime}} &nbsp;·&nbsp; {{eventLocation}}
+        </div>
+      </div>
+
+      <!-- RSVP buttons -->
+      <div class="rsvp-section">
+        <p>Will you be joining us?</p>
+        <a href="{{comingLink}}" class="btn btn-yes">✅ Absolutely, I'm In!</a>
+        <a href="{{notComingLink}}" class="btn btn-no">Next Time, May Be</a>
+      </div>
+
+      <!-- Event details -->
+      <div class="details-section">
+        <h2>📌 Event Details</h2>
+        <ul>
+          <li>{{eventDetails}}</li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h2>👉 Important Instructions</h2>
+        <ul>
+          <li>⚠️ <strong>Mandatory:</strong> Please RSVP by clicking one of the buttons above.</li>
+          <li>❗ <strong>Important:</strong> Your response link is unique to you — do not share it.</li>
+          <li>🎁 <strong>Perks:</strong> Attendees receive exclusive swag and early access to new features.</li>
+        </ul>
+      </div>
+
+      <!-- Organizer message -->
+      <div class="organizer-block">
+        <p>{{organizerMessage}}</p>
+        <p class="organizer-name">— {{organizerName}}</p>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        You received this email because you are on the guest list for
+        <strong>{{eventTitle}}</strong>.<br />
+        If you believe this was sent in error, please ignore this message.
+      </p>
+      <p>Organised by <strong>{{organizerName}}</strong></p>
+    </div>
+
+  </div>
+</body>
+</html>
